@@ -188,7 +188,7 @@ REDIS_HOST=localhost
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/notjeetard-18/ai-search-engine.git
+   git clone https://github.com/shubham-k-jha-dev/ai-search-engine.git
    cd ai-search-engine
    ```
 
