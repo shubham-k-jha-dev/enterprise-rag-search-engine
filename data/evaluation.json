@@ -1,0 +1,14 @@
+[
+    {
+        "query": "Why did Dexter fake his death?",
+        "expected_text": "Dexter faked his death by staging a boating accident"
+    },
+    {
+        "query": "Who killed Ned Stark?",
+        "expected_text": "executed on the orders of King Joffrey Baratheon"
+    },
+    {
+        "query": "What is the Iron Throne?",
+        "expected_text": "Iron Throne is the seat of power of the Seven Kingdoms"
+    }
+]
