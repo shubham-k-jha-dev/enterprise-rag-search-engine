@@ -1,26 +1,27 @@
-# Environment variables
 .env
 
-# Python cache
 __pycache__/
 *.py[cod]
 *.pyo
 
-# Virtual environment
 venv/
 env/
 .venv/
 
-# Qdrant binary data
-data/qdrant/
-
-# Query logs
+data/*.db
 data/query_logs.json
 
-# Uploads folder
+data/qdrant/
+
 uploads/
 
-# OS files
+node_modules/
+dist/
+build/
+.vscode/
+.idea/
 .DS_Store
 Thumbs.db
-venv/ 
+# Lock files
+bun.lockb
+*.lock

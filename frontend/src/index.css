@@ -1,0 +1,467 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 3%;
+    --foreground: 210 40% 98%;
+    --card: 217 33% 10%;
+    --card-foreground: 210 40% 98%;
+    --popover: 217 33% 10%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 215 25% 15%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 215 25% 15%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 215 25% 20%;
+    --input: 215 25% 20%;
+    --ring: 217 91% 60%;
+    --radius: 0.5rem;
+    --sidebar-background: 222 47% 5%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 215 25% 15%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 215 25% 15%;
+    --sidebar-ring: 217 91% 60%;
+  }
+
+  .dark {
+    --background: 222 47% 3%;
+    --foreground: 210 40% 98%;
+    --card: 217 33% 10%;
+    --card-foreground: 210 40% 98%;
+    --popover: 217 33% 10%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 215 25% 15%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 215 25% 15%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 215 25% 20%;
+    --input: 215 25% 20%;
+    --ring: 217 91% 60%;
+    --sidebar-background: 222 47% 5%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 215 25% 15%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 215 25% 15%;
+    --sidebar-ring: 217 91% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* ===== Nexus AI Design System ===== */
+
+.nexus-root {
+  min-height: 100vh;
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.nexus-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Header */
+.nexus-header {
+  border-bottom: 1px solid hsl(var(--border));
+  background: hsla(222, 47%, 3%, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.nexus-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.nexus-logo {
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: -0.03em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nexus-logo-icon {
+  width: 28px;
+  height: 28px;
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(263, 70%, 50%));
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nexus-logo-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.nexus-tabs {
+  display: flex;
+  gap: 2px;
+}
+
+.nexus-tab {
+  background: transparent;
+  border: none;
+  color: hsl(var(--muted-foreground));
+  padding: 8px 16px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: color 150ms, background 150ms;
+  font-family: inherit;
+}
+
+.nexus-tab:hover {
+  color: hsl(var(--foreground));
+  background: hsl(var(--card));
+}
+
+.nexus-tab.active {
+  color: hsl(var(--foreground));
+  background: hsl(var(--secondary));
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.nexus-main {
+  padding: 3rem 0 4rem;
+}
+
+/* Animation */
+.nexus-fade {
+  animation: nexusFadeIn 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes nexusFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Input group */
+.nexus-input-group {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 2rem;
+  align-items: flex-end;
+}
+
+.nexus-control {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.nexus-control.grow {
+  flex: 3;
+}
+
+.nexus-control label,
+.nexus-upload-card label {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: hsl(var(--muted-foreground));
+}
+
+.nexus-control input,
+.nexus-control select,
+.nexus-upload-card select {
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  color: hsl(var(--foreground));
+  padding: 0 16px;
+  height: 44px;
+  border-radius: 8px;
+  font-size: 0.9375rem;
+  font-family: inherit;
+  transition: border-color 150ms, box-shadow 150ms;
+  width: 100%;
+}
+
+.nexus-control input::placeholder {
+  color: hsl(var(--muted-foreground));
+  opacity: 0.6;
+}
+
+.nexus-control input:focus,
+.nexus-control select:focus,
+.nexus-upload-card select:focus {
+  outline: none;
+  border-color: hsl(var(--primary));
+  box-shadow: 0 0 0 3px hsla(217, 91%, 60%, 0.15);
+}
+
+.nexus-control select,
+.nexus-upload-card select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+}
+
+.nexus-control select option,
+.nexus-upload-card select option {
+  background: hsl(var(--secondary));
+  color: hsl(var(--foreground));
+}
+
+/* Button */
+.nexus-btn {
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  border: none;
+  padding: 0 28px;
+  height: 44px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background 150ms, transform 80ms ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  font-family: inherit;
+  flex-shrink: 0;
+}
+
+.nexus-btn:hover {
+  background: hsl(217, 91%, 49%);
+}
+
+.nexus-btn:active {
+  transform: scale(0.97);
+}
+
+/* Cards */
+.nexus-card {
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+}
+
+.nexus-results {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.nexus-result {
+  border-left: 3px solid hsl(var(--primary));
+}
+
+.nexus-result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 12px;
+}
+
+.nexus-source-tag {
+  background: hsla(217, 91%, 60%, 0.1);
+  color: hsl(var(--primary));
+  padding: 2px 10px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.nexus-score {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.75rem;
+  color: hsl(var(--muted-foreground));
+}
+
+.nexus-chunk {
+  font-size: 0.9rem;
+  color: hsl(var(--muted-foreground));
+  line-height: 1.7;
+}
+
+/* Answer */
+.nexus-answer {
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: 12px;
+  padding: 2rem;
+  min-height: 180px;
+  font-size: 1rem;
+  line-height: 1.8;
+  white-space: pre-wrap;
+  margin-bottom: 2rem;
+}
+
+.nexus-answer.placeholder {
+  color: hsl(var(--muted-foreground));
+  font-style: italic;
+}
+
+.nexus-sources-section {
+  border-top: 1px solid hsl(var(--border));
+  padding-top: 1.5rem;
+}
+
+.nexus-sources-section h3 {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: hsl(var(--muted-foreground));
+  margin-bottom: 1rem;
+}
+
+.nexus-sources-empty {
+  color: hsl(var(--muted-foreground));
+  font-size: 0.875rem;
+  opacity: 0.6;
+}
+
+/* Upload */
+.nexus-upload-card {
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.nexus-upload-zone {
+  border: 2px dashed hsl(var(--border));
+  border-radius: 12px;
+  padding: 3.5rem 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 150ms, background 150ms;
+}
+
+.nexus-upload-zone:hover {
+  border-color: hsl(var(--primary));
+  background: hsla(217, 91%, 60%, 0.04);
+}
+
+.nexus-upload-zone svg {
+  margin: 0 auto 12px;
+  opacity: 0.4;
+}
+
+.nexus-sub {
+  font-size: 0.8125rem;
+  color: hsl(var(--muted-foreground));
+}
+
+.nexus-status {
+  margin-top: 1rem;
+  padding: 0.875rem 1rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+}
+
+.nexus-status.loading {
+  background: hsla(217, 91%, 60%, 0.08);
+  color: hsl(var(--primary));
+}
+
+.nexus-status.success {
+  background: hsla(160, 84%, 39%, 0.08);
+  color: hsl(160, 84%, 39%);
+}
+
+.nexus-status.error {
+  background: hsla(0, 84%, 60%, 0.08);
+  color: hsl(var(--destructive));
+}
+
+/* Metrics */
+.nexus-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.nexus-metric {
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.nexus-metric-label {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: hsl(var(--muted-foreground));
+  margin-bottom: 0.5rem;
+}
+
+.nexus-metric-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: hsl(var(--primary));
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+/* States */
+.nexus-loading {
+  color: hsl(var(--muted-foreground));
+  font-size: 0.875rem;
+}
+
+.nexus-error {
+  color: hsl(var(--destructive));
+}
+
+.nexus-empty {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: hsl(var(--muted-foreground));
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .nexus-container { padding: 0 1rem; }
+  .nexus-input-group { flex-direction: column; }
+  .nexus-control.grow { flex: 1; }
+  .nexus-tabs { gap: 0; }
+  .nexus-tab { padding: 6px 10px; font-size: 0.8125rem; }
+  .nexus-metrics-grid { grid-template-columns: 1fr 1fr; }
+}
