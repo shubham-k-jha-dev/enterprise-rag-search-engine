@@ -1,14 +1,162 @@
 [
     {
+        "id": 1,
         "query": "Why did Dexter fake his death?",
-        "expected_text": "Dexter faked his death by staging a boating accident"
+        "expected_text": "Dexter faked his death by staging a boating accident",
+        "workspace": "dexter",
+        "query_type": "reasoning",
+        "notes": "Tests causal reasoning retrieval — answer requires understanding motivation"
     },
     {
+        "id": 2,
         "query": "Who killed Ned Stark?",
-        "expected_text": "executed on the orders of King Joffrey Baratheon"
+        "expected_text": "executed on the orders of King Joffrey Baratheon",
+        "workspace": "got",
+        "query_type": "factoid",
+        "notes": "Simple factoid — direct answer exists in one chunk"
     },
     {
+        "id": 3,
         "query": "What is the Iron Throne?",
-        "expected_text": "Iron Throne is the seat of power of the Seven Kingdoms"
+        "expected_text": "Iron Throne is the seat of power of the Seven Kingdoms",
+        "workspace": "got",
+        "query_type": "factoid",
+        "notes": "Definition query — tests concept retrieval"
+    },
+    {
+        "id": 4,
+        "query": "What is Dexter Morgan's dark passenger?",
+        "expected_text": "dark passenger",
+        "workspace": "dexter",
+        "query_type": "factoid",
+        "notes": "Core concept from Dexter — tests exact term retrieval"
+    },
+    {
+        "id": 5,
+        "query": "What is the Night's Watch?",
+        "expected_text": "Night's Watch",
+        "workspace": "got",
+        "query_type": "factoid",
+        "notes": "Named entity definition — tests keyword plus semantic retrieval"
+    },
+    {
+        "id": 6,
+        "query": "Why did Jon Snow get killed by his brothers?",
+        "expected_text": "Jon Snow",
+        "workspace": "got",
+        "query_type": "reasoning",
+        "notes": "Reasoning query about character motivation and betrayal"
+    },
+    {
+        "id": 7,
+        "query": "What is the Code of Harry in Dexter?",
+        "expected_text": "Harry",
+        "workspace": "dexter",
+        "query_type": "factoid",
+        "notes": "Named concept retrieval — the moral code Dexter follows"
+    },
+    {
+        "id": 8,
+        "query": "Who is Daenerys Targaryen?",
+        "expected_text": "Targaryen",
+        "workspace": "got",
+        "query_type": "factoid",
+        "notes": "Character identification — tests proper noun retrieval"
+    },
+    {
+        "id": 9,
+        "query": "What happened at the Red Wedding?",
+        "expected_text": "Stark",
+        "workspace": "got",
+        "query_type": "event",
+        "notes": "Major plot event — tests narrative event retrieval"
+    },
+    {
+        "id": 10,
+        "query": "How does Dexter choose his victims?",
+        "expected_text": "Dexter",
+        "workspace": "dexter",
+        "query_type": "reasoning",
+        "notes": "Process and methodology query — tests multi-chunk synthesis"
+    },
+    {
+        "id": 11,
+        "query": "What is Winterfell?",
+        "expected_text": "Winterfell",
+        "workspace": "got",
+        "query_type": "factoid",
+        "notes": "Location definition — tests place name retrieval"
+    },
+    {
+        "id": 12,
+        "query": "Who is Cersei Lannister?",
+        "expected_text": "Lannister",
+        "workspace": "got",
+        "query_type": "factoid",
+        "notes": "Character identification query"
+    },
+    {
+        "id": 13,
+        "query": "What is Miami Metro in Dexter?",
+        "expected_text": "Miami",
+        "workspace": "dexter",
+        "query_type": "factoid",
+        "notes": "Organisation identification — tests named entity retrieval"
+    },
+    {
+        "id": 14,
+        "query": "Why did Jaime Lannister push Bran from the window?",
+        "expected_text": "Bran",
+        "workspace": "got",
+        "query_type": "reasoning",
+        "notes": "Causal reasoning about a specific character action"
+    },
+    {
+        "id": 15,
+        "query": "What are dragons in Game of Thrones?",
+        "expected_text": "dragon",
+        "workspace": "got",
+        "query_type": "factoid",
+        "notes": "Concept retrieval — core world-building element"
+    },
+    {
+        "id": 16,
+        "query": "Who is Sergeant Doakes in Dexter?",
+        "expected_text": "Doakes",
+        "workspace": "dexter",
+        "query_type": "factoid",
+        "notes": "Character identification — secondary character"
+    },
+    {
+        "id": 17,
+        "query": "What is the Wall in Game of Thrones?",
+        "expected_text": "Wall",
+        "workspace": "got",
+        "query_type": "factoid",
+        "notes": "Landmark and structure definition"
+    },
+    {
+        "id": 18,
+        "query": "How did Dexter's sister Debra die?",
+        "expected_text": "Debra",
+        "workspace": "dexter",
+        "query_type": "event",
+        "notes": "Character death event — tests narrative event retrieval"
+    },
+    {
+        "id": 19,
+        "query": "Who are the Starks?",
+        "expected_text": "Stark",
+        "workspace": "got",
+        "query_type": "factoid",
+        "notes": "Family and house identification — tests group entity retrieval"
+    },
+    {
+        "id": 20,
+        "query": "Why is Dexter a serial killer?",
+        "expected_text": "Dexter",
+        "workspace": "dexter",
+        "query_type": "reasoning",
+        "notes": "Deep reasoning query about character psychology and backstory"
     }
 ]
