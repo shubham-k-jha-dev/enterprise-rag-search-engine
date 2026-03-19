@@ -4,7 +4,7 @@ model = CrossEncoder("cross-encoder/ms-marco-MiniLM-L-6-v2")
 
 def rerank(query, docs, top_k=3):
 
-    pairs = [(query, doc) for doc in docs]
+    pairs = [(query, doc["text"]) for doc in docs]
 
     scores = model.predict(pairs)
 
@@ -12,6 +12,9 @@ def rerank(query, docs, top_k=3):
 
     scored_docs.sort(key=lambda x: x[1], reverse=True)
 
-    reranked = [doc for doc, score in scored_docs[:top_k]]
+    reranked = []
+    for doc, score in scored_docs[:top_k]:
+        doc["rerank_score"] = round(float(score), 4)
+        reranked.append(doc)
 
     return reranked
