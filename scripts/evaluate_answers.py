@@ -251,7 +251,7 @@ def parse_args() -> argparse.Namespace:
 if __name__ == "__main__":
     args = parse_args()
 
-    print("⚠️  NOTE: The FastAPI server must be running before this script.")
+    print("NOTE: The FastAPI server must be running before this script.")
     print(f"    Connecting to: {args.base_url}")
 
     metrics = evaluate_answers(
