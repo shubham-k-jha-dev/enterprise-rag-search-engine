@@ -14,7 +14,7 @@ def get_cached(query):
     data = redis_client.get(query)
     
     if data:
-        record_cache_hit()
+        record_cache_hit()            # cache_hit function call
         return json.loads(data)
     
     return None
